@@ -1,0 +1,11 @@
+class Solution:
+    def maxProductDifference(self, nums: List[int]) -> int:
+        min_nums = min(nums)
+        max_nums = max(nums)
+        nums.sort()
+        s_min = nums[-2]
+        nums.sort(reverse=True)
+        s_max = nums[-2]
+        product = (max_nums * s_min) - (min_nums * s_max)
+        
+        return product
