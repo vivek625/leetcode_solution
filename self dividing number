@@ -1,0 +1,14 @@
+class Solution:
+    def selfDividingNumbers(self, left: int, right: int) -> List[int]:
+        l=[]
+        while(left<=right):
+            u=left
+            while(u>0):     
+                if(u%10==0 or left%(u%10)!=0):
+                    break;
+                u//=10
+            if(u==0):
+                l.append(left)
+            left+=1
+        return l
+        
