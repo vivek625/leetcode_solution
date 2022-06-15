@@ -1,0 +1,12 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        v = ""
+        for i in s:
+            if i.isalpha() == True or i.isdigit() == True:
+                v += i
+        v = v.lower()
+        if v == v[::-1]:
+            return True
+        else:
+            return False
+            
