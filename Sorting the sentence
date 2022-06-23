@@ -1,0 +1,10 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        l=list(s.split(" "))
+        k = ['*' for _ in range(len(l))]
+        for i in l:
+            pos = i[-1]
+            value = i[0:-1]
+            k[int(pos)-1]=value
+        ans = " ".join(k)
+        return(ans)
