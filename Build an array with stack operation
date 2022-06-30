@@ -1,0 +1,16 @@
+class Solution:
+    def buildArray(self, target: List[int], n: int) -> List[str]:
+        
+        result = []
+        i = 1
+        index = 0
+        while i <= n and index < len(target):
+            if target[index] == i:
+                result.append("Push")
+                index += 1
+            elif target[index] !=i:
+                result.append("Push")
+                result.append("Pop")
+            i += 1
+        return (result)
+    
