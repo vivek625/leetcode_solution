@@ -1,0 +1,22 @@
+class Solution:
+    def decompressRLElist(self, nums: List[int]) -> List[int]:
+        l = []
+        l1 = []
+        l2 = []
+        l3 = []
+        j = 0
+        for i in range(len(nums)):
+            if i % 2 == 0:
+                l.append(nums[i])
+            else:
+                l1.append(nums[i])
+        l2 = list(zip(l,l1))
+        for i in l2:
+        #     print("fea",i[1])
+            j=i[0]
+        #     print(j)
+            for k in range(j):
+        #         print("fjeo",k)
+        #         print(j)
+                l3.append(i[1])
+        return l3
