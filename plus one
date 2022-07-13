@@ -1,0 +1,13 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        # digits = [4,2,4,1]
+        x = [str(i) for i in digits]
+        # s = "".join((str(digit)))
+        s = ("".join((x)))
+        # print(s)
+        k = int(s) + 1
+        # print(k)
+        d = [int(j) for j in str(k)]
+        # d = int(d)
+        # print((d))
+        return d
