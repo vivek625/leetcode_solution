@@ -1,0 +1,19 @@
+class Solution:
+    def distributeCandies(self, candies: int, num_people: int) -> List[int]:
+        # candies = 7 
+        # num_people = 4
+        l = [0 for i in range(num_people)]
+        i =0 
+        while candies > 0:
+            if i + 1 < candies:
+                l[i%num_people] += i+1
+                candies -= (i + 1)
+        #         print(candies)
+                i += 1
+        #         print(l)
+            else:
+                l[i%num_people] += candies
+        #         print(l)
+                candies = 0
+        #         print(candies)
+        return l
