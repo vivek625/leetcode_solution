@@ -1,0 +1,19 @@
+class Solution:
+    def diStringMatch(self, s: str) -> List[int]:
+        # s ="IDID"
+        k = []
+        mi = 0
+        mx = len(s)
+        # print(mx)
+        for x in s:
+            if x == "I":
+                k.append(mi)
+                mi += 1
+                # print(k)
+            elif x == "D":
+                k.append(mx)
+        #         print(k)
+                mx = mx - 1
+        # print(mx)
+        k.append(mi)
+        return (k)
