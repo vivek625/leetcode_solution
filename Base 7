@@ -1,0 +1,16 @@
+class Solution:
+    def convertToBase7(self, num: int) -> str:
+        # num = 100
+        if not num :
+            return(str(num))
+        if num >= 0:
+            k = ""
+        else:
+            k = "-"
+            num = -num
+        s = []
+        while num > 0:
+            s.append(str(num%7))
+            num  //= 7
+        s.append(k)
+        return("".join(reversed(s)))
