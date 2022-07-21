@@ -1,0 +1,14 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        # s = "egg"
+        # t = "add"
+        m= dict()
+        for i , c in enumerate(s):
+            if c in m:
+                if m[c] != t[i]:
+                    return(False)
+            elif t[i] in m.values():
+                return(False)
+            else:
+                m[c] = t[i]
+        return(True)
