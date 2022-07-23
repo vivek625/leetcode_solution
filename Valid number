@@ -1,0 +1,28 @@
+class Solution:
+    def isNumber(self, s: str) -> bool:
+        # s = "0"
+        dotSeen = False
+        eSeen = False
+        numSeen = False
+        for i in range(len(s)):
+            if ord('0')<=ord(s[i])<=ord('9'):
+                numSeen = True
+            elif s[i]=='.':
+                if eSeen or dotSeen:
+                    return(False)
+                dotSeen = True
+            elif s[i]=='E'or s[i]=='e':
+                if eSeen or (not numSeen):
+                    return(False)
+                numSeen = False
+                eSeen = True
+            elif s[i]=='+' or s[i]=='-':
+                if i==0:
+                    continue
+                elif s[i-1]=='e' or s[i-1]=='E':
+                    continue
+                else:
+                    return(False)
+            else:
+                return( False)
+        return(numSeen)
