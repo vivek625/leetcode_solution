@@ -1,0 +1,13 @@
+# import sympy
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        if n<2:
+            return 0
+        nums = [1]*n
+        nums[:2] = [0]*2
+        s = 0
+        for i in range(2,n):
+            if nums[i]:
+                s += 1
+                nums[::i] = [0]*len(nums[::i])
+        return s
