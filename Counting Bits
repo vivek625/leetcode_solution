@@ -1,0 +1,8 @@
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        k = []
+        s = []
+        for i in range(n+1):
+            k = map(int,bin(i)[2:])
+            s.append(sum(k))
+        return (s)
