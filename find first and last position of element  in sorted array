@@ -1,0 +1,14 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        s = []
+        for i in range(len(nums)):
+            if nums[i] == target:
+                s.append(i)
+        ans = [-1,-1]
+        if len(s) > 1:
+            ans[0] = min(s)
+            ans[1] = max(s)
+        if len(s) == 1:
+            ans[0] = s[0]
+            ans[1] = s[0]
+        return (ans)
